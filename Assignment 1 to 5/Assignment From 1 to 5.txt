@@ -1,0 +1,47 @@
+Week 1
+======
+Assignment 1
+============
+<?php
+/*
+This is a multiple line comment 
+with php
+*/
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="<?php echo 'utf-8' ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?='My First PHP Page'?></title>
+</head>
+<body>
+    <div><?php echo 'We Love'?></div>
+    <div><?php echo 'Elzero Channe'?></div>
+</body>
+</html>
+
+Assignment 2
+============
+<?php
+// echo 'Prevent Me From Running Please';
+# echo 'Prevent Me From Running Please';
+/*echo 'Prevent Me From Running Please';*/
+
+Assignment 3
+============
+<?php
+/*
+My Application
+Version 1.0
+Created By Elzero
+*/
+
+Assignment 4
+============
+<?php
+// ## First Comment  True
+# // # Second Comment  True
+/* /* /* Third Comment */   //True
+////// Fourth Comment  false

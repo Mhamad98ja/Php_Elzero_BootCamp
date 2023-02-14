@@ -1,0 +1,72 @@
+Week 2
+======
+Assignment 1
+============
+<?php
+echo(int) 15.2 + (int) 14.7 + (10.5 + 10.5); // 50
+echo gettype((int) 15.2 + (int) 14.7 +(int) (10.5 + 10.5)); // Integer
+
+Assignment 2
+============
+<?php
+echo gettype(100);
+echo '<br>';
+var_dump(100);
+
+Assignment 3
+============
+<?php
+echo "Hello \"Elzero\" \\\\ \"\"\" We Love \"$\$PHP\"";
+
+Assignment 4
+============
+<?php
+echo nl2br(
+"We
+Love
+Elzero
+We
+School");
+
+Assignment 5
+============
+<?php
+echo nl2br(<<<'now'
+Hello "'Elzero'" 
+We Love $Programming$
+Languages Specially "PHP"
+now);
+
+Assignment 6
+============
+<?php
+$something = "Programming";
+
+echo <<<code
+Hello \PHP\
+We Love $something
+code;
+
+
+Assignment 7
+============
+<?php
+
+echo (int)1+(int)"Hello PHP";
+echo '<br>';
+echo gettype((int)1+(int)"Hello PHP");
+
+
+Assignment 8
+============
+<?php
+echo '<pre>';
+print_r([
+    "FrontEnd"=>["0"=>'HTML',"1"=>"CSS","JS"=>["Vuejs"=>["2"=>"v2","3"=>"v3"],"0"=>"Reactjs","1"=>"Svelte"]],
+    "BackEnd"=>["0"=>"PHP","1"=>"MySQL","2"=>"Security"],
+    "0"=>"git",
+    "1"=>"github",
+    "Testing"=>["0"=>"Unit Testing","1"=>"End To End","2"=>"ntegration"],
+
+]);
+echo '</pre>';

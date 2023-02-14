@@ -1,0 +1,145 @@
+Week 3
+======
+Assignment 1
+============
+<?php 
+$userName= "Elzero Courses";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=<?php echo $userName ?>>
+    <title>Welcome to <?php echo $userName ?></title>
+</head>
+<body>
+    <h1><?php $userName ?></h1>
+    <p>Here In <?php echo $userName ?> We Provide Front-End And Back-End Courses</p>
+    <hr>
+    <div><?php echo $userName ?> Is The What You Need.</div>
+    <footer>All Right Reserved To <?php echo $userName ?></footer>
+</body>
+</html>
+
+Assignment 2
+============
+<?php
+$name = "elzero";
+$$name = "Web";
+echo $$name ;
+echo '<br>';
+echo $elzero ;
+echo '<br>';
+echo "${$name}";
+echo '<br>';
+echo "${elzero}";
+
+Assignment 3
+============
+<?php
+$a = 200;
+$a = 100;
+$b = $a;
+
+echo $b; // 100
+
+Assignment 4
+============
+<?php
+echo __DIR__;
+echo '<br>';
+echo $_SERVER["HTTP_HOST"];
+echo '<br>';
+echo $_SERVER["SystemRoot"];
+echo '<br>';
+echo $_SERVER["OPENSSL_CONF"];
+
+
+Assignment 5
+============
+<?php 
+/*
+halt_compiler()	abstract	and	array()	as
+break	callable	case	catch	class
+clone	const	continue	declare	default
+die()	do	echo	else	elseif
+empty()	enddeclare	endfor	endforeach	endif
+endswitch	endwhile	eval()	exit()	extends
+final	finally	fn (as of PHP 7.4)	for	foreach
+function	global	goto	if	implements
+include	include_once	instanceof	insteadof	interface
+isset()	list()	match (as of PHP 8.0)	namespace	new
+or	print	private	protected	public
+readonly (as of PHP 8.1.0) *	require	require_once	return	static
+switch	throw	trait	try	unset()
+use	var	while	xor	yield
+*/
+
+Assignment 6
+============
+<?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo __LINE__;
+echo '<br>';
+echo $_SERVER["SCRIPT_FILENAME"] ;
+echo '<br>';
+echo $_SERVER["CONTEXT_DOCUMENT_ROOT"] ;
