@@ -1,0 +1,149 @@
+Week 5
+======
+Assignment 1
+============
+<?php
+$a = 100;
+$b = 200;
+$c = 100;
+
+if($b>$a){
+    if($a==$c){
+        if($a+$c==$b){
+            echo "Yes";
+        }
+    }
+}
+
+Assignment 2
+============
+<?php
+// Test Case 1
+// $a = 100;
+// $b = 200;
+// $c = 300;
+
+// if($a<$b && $a<$c){
+//     echo 'A Is Not Larger Than B Or C';
+// }
+
+// A Is Not Larger Than B Or C
+
+// Test Case 2
+// $a = 200;
+// $b = 100;
+// $c = 300;
+// if($a>$b){
+//     echo"A Is Larger Than B";
+// }
+// A Is Larger Than B
+
+// Test Case 3
+// $a = 200;
+// $b = 200;
+// $c = 100;
+// if($a>$c){
+//     echo"A Is Larger Than c";
+// }
+// A Is Larger Than c
+
+Assignment 3
+============
+
+<?php
+if($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+<?php $username=@$_POST['user'];
+echo "The Request Method Is Post And Username Is $username";
+$admins = ["Osama", "Ahmed", "Sayed"];
+foreach($admins as $admin){
+    if($admin =="$username"){
+        echo "This Username $username Is Admin";
+    }
+}
+?>
+    <form action="" method="POST">
+    <input type="text" name="user">
+    <input type="submit" value="Send">
+    </form>
+
+    <?php endif ?>
+
+Assignment 4
+============
+<?php
+$a = 30;
+$b = 20;
+$c = 10;
+
+echo (($a + $b === $c ? "A + B = C" : $a + $c === $b) ? "A + C = B": $b + $c === $a) ? "B + C = A":"The End";
+
+Assignment 5
+============
+<?php
+$name = "Osama";
+$age = 40;
+$country = "Egypt";
+
+if ($age > 18 && gettype($name) === "string" && $country === "Egypt") {
+    echo "The Age Is Good To Go<br>";
+    echo "The Name Is Good To Go<br>";
+    echo "The Country Is Good To Go<br>";
+
+}
+
+Assignment 6
+============
+<?php 
+$genre = "Hack And Slash";
+switch($genre){
+    case"RPG":
+        echo "I Recommend Ys Games";
+        break;
+    case"Hack And Slash":
+        echo "I Recommend Castlevania Games";
+        break;
+    case"FPS":
+        echo "I Recommend Uncharted Gamess";
+        break;
+    case"Platform":
+    case"Puzzle":
+        echo "I Recommend Megaman Games";
+        break;
+    default:
+    echo "I Recommend Shadow Of Mordor And Shadow Of War";
+}
+
+Assignment 7
+============
+<?php
+$num_one = 23;
+$num_two = 5;
+$op = "/";
+
+if($op == "+"){
+    echo $num_one + $num_two ;
+}elseif($op == "-"){
+    echo $num_one - $num_two ;
+}elseif($op == "*"){
+    echo $num_one * $num_two ;
+}elseif($op == "/"){
+    echo (int)($num_one / $num_two) ;
+}else{
+    echo "Unknow Operator";
+}
+
+Assignment 8
+============
+<?php
+$day = "Fri";
+
+if($day =="Sat" || $day=="Sun" || $day=="Mon"){
+    echo "We Are Open All The Day";
+}elseif($day =="Tue" || $day=="Wed"){
+    echo "We Are Open From 08:12";
+}elseif($day == "Thu" || $day=="Fri"){
+    echo "We Are Closed";
+}else{
+    echo "Unknown Day";
+}
+

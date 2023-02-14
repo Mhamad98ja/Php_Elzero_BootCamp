@@ -1,0 +1,240 @@
+Week 8
+======
+Assignment 1
+============
+<?p<?php
+$friends = [
+    "AG" => "Ahmed Gamal",
+    "OM" => "Osama Mohamed",
+    "MG" => "Mahmoud Gamal",
+    "AS" => "Ahmed Samy",
+    "FA" => "Farid Ahmed",
+    "SM" => "Sayed Mohamed"
+];
+
+echo "<pre>";
+print_r(array_chunk(array_change_key_case($friends,CASE_LOWER),2,true));
+echo "</pre>";
+
+Assignment 2
+============
+<?php
+$codes = ["H", "C", "J"];
+$means = ["HTML", "CSS", "JavaScript"];
+
+echo '<pre>';
+print_r(array_combine(array_map(fn($el)=>strtolower($el),$codes),$means));
+echo '</pre>';
+
+Assignment 3
+============
+<?php
+$friends = [
+    "Ahmed Gamal" => "AG",
+    "Osama Mohamed" => "OM",
+    "Mahmoud Gamal" => "MG",
+    "Ahmed Samy" => "AS"
+];
+echo "<pre>";
+print_r(array_reverse(array_flip(array_map(fn($el)=>strtolower($el),$friends))));
+echo "</pre>";
+
+Assignment 4
+============
+<?php
+$nums = [10, 20, 30];
+echo array_reduce($nums,fn($carry,$item)=>$carry+$item);
+echo '<br>';
+echo array_sum($nums);
+
+Assignment 5
+============
+<?php
+$nums = [5, 10, 20, 5, 30, 40];
+echo array_reduce(array_filter($nums,"check"),fn($carry,$item)=>$carry+$item);
+function check($el){
+        return  $el>5;
+    }
+
+Assignment 6
+============
+<?php
+$chars = ["A", "B", "C", "D", "E"];
+$char = "@@";
+$zero = 0;
+echo "<pre>";
+print_r(array_pad($chars,true.$zero,$char));
+echo "</pre>";
+
+Assignment 7
+============
+<?php
+$names = ["Osama", "Ahmed", "Sayed", "Mahmoud", "Ali"];
+
+next($names);
+next($names);
+
+echo current($names) . "<br>"; // "Sayed"
+
+end($names);
+
+echo current($names) . "<br>"; // "Ali"
+
+reset($names);
+
+echo current($names) . "<br>"; // "Osama"
+
+end($names);
+prev($names);
+
+echo current($names) . "<br>"; // "Mahmoud"
+
+Assignment 8
+============
+<?php
+$chars = ["A", "B", "C"];
+$added_char=["D"];
+
+//Methode 1:
+//==========
+array_push($chars,"D");
+echo '<pre>';
+print_r($chars);
+echo '</pre>';
+
+//Methode 2:
+//==========
+$chars[]="D";
+echo '<pre>';
+print_r($chars);
+echo '</pre>';
+
+//Methode 3:
+//==========
+$chars[count($chars)]="D";
+echo '<pre>';
+print_r($chars);
+echo '</pre>';
+
+//Methode 4:
+//==========
+echo '<pre>';
+print_r(array_merge($chars,$added_char));
+echo '</pre>';
+
+Assignment 9
+============
+<?php
+$nums = [1, 2, 3, 4, 5, 6];
+echo "<pre>";
+print_r(array_slice($nums,-5,-2));
+echo "</pre>";
+
+Assignment 10
+=============
+<?php
+$mix = [1, 2, 3, "A", "B", "C", 7, 8, 9];
+$nums = [4, 5, 6];
+
+array_splice($mix,count($nums),count($nums),$nums);
+echo '<pre>';
+print_r($mix);
+echo '</pre>';
+
+Assignment 11
+=============
+<?php
+$arr = ["A", "B", "C", "D", "E"];
+$sum=0;
+for ($i=0;$i<count($arr);$i++){
+    if($arr[$i]){
+        $el= 1;
+    }
+    $sum +=$el;
+}
+echo $sum;
+
+Assignment 12
+=============
+<?php
+$nums = [11, 2, 10, 7, 20, 50];
+$sum=0;
+for ($i=0;$i<count($nums);$i++){
+    $sum+=$nums[$i];
+}
+echo $sum;
+
+Assignment 13
+=============
+<?php
+$nums = [10, 100, -20, 50, 30];
+$max=0;
+foreach($nums as $num){
+    if($num >= $max ){
+        $max = $num;
+    }
+}
+echo $max;
+
+Assignment 14
+=============
+<?php
+$nums = [10, 100, -20, 50, 30];
+$min=0;
+foreach($nums as $num){
+    if($num < $min ){
+        $min = $num;
+    }
+}
+echo $min;
+
+Assignment 15
+=============
+<?php
+$chars = ["o", "r", "e", "z", "l", "E"];
+
+for($i=count($chars);$i>0;$i--){
+    echo $chars[$i-true];
+}
+
+Assignment 16
+=============
+<?php
+$mix = ["A", "C", "B", 1, 100, 3, 2, 6, 5, 7];
+function odd($el){
+    if(gettype($el)=="string"){
+        $el="";
+    }elseif($el %2!=0){
+        return $el;
+    }else{
+        $el=0;
+    }
+}
+echo '<pre>';
+print_r(array_values(array_filter($mix,"odd")));
+echo '</pre>';
+
+Assignment 17
+=============
+<?php
+$nums = [1, 2, 3, 4, 5, 6];
+for ($i=0; $i<count($nums); $i++) {
+    $num[$i] = rand($nums[0],$nums[count($nums)-1]);
+    for ($j=0; $j<$i; $j++) {             
+        while ($num[$j] == $num[$i]){               
+            $num[$i] = rand($nums[0],$nums[count($nums)-1]);           
+            $j = 0;             
+        }           
+    }    
+    }       
+echo '<pre>';
+print_r($num); 
+echo '</pre>' ;
+
+Assignment 18
+=============
+<?php
+$title = "E&z\$r0 W\$b Sch00&";
+echo str_replace(["&","\$","0"],["l","e","o"],$title,$count);
+echo '<br>';
+echo $count;

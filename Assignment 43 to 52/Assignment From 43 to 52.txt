@@ -1,0 +1,189 @@
+Week 6
+======
+Assignment 1
+============
+<?php
+function greeting($name,$gender=""){
+    if($gender=="Male"){
+        echo "Hello Mr $name <br>";
+    }elseif($gender=="Female"){
+        echo "Hello Miss $name<br>";
+    }else{
+        echo "Hello $name<br>";
+    }
+}
+
+// Needed Output
+echo greeting("Osama", "Male"); // Hello Mr Osama
+echo greeting("Eman", "Female"); // Hello Miss Eman
+echo greeting("Sameh"); // Hello Sameh
+
+Assignment 2
+============
+<?php
+function get_arguments(...$args){
+    
+    foreach($args as $el){
+        echo $el ." ";
+    }
+    echo "<br>";
+}
+
+echo get_arguments("Hello", "Elzero", "Web", "School"); // Hello Elzero Web School
+echo get_arguments("I", "Love", "PHP"); // I Love PHP
+
+
+Assignment 3
+============
+<?php
+function sum_all(...$numbers){
+    $sum=0;
+    foreach($numbers as $numb){
+        if($numb==5){
+            continue;
+        }
+        if($numb==10){
+            $numb=20;
+            $numb=$numb;
+        }
+        $sum+=$numb;
+    }
+    return $sum."<br>";
+}
+
+// Needed Output
+echo sum_all(10, 12, 5, 6, 6, 10); // 64
+echo sum_all(5, 10, 5, 10); // 40
+
+
+Assignment 4
+============
+<?php
+function multiply(...$values){
+    $multi=1;
+    foreach($values as $value){
+        if(gettype($value)=="string"){
+            $value=1;
+        }
+        if(gettype($value)=="double"){
+            $value=(int)$value;
+        }
+        $multi=$multi*$value;
+    }
+    return $multi."<br>";
+}
+
+// Needed Output
+echo multiply(10, 20); // 200
+echo multiply("A", 10, 30); // 300
+echo multiply(100.5, 10, "B"); // 1000
+
+
+Assignment 5
+============
+<?php
+function check_status($a, $b, $c) {
+    if(gettype($a)==="string" && gettype($b)==="integer" && gettype($c)==="boolean"){
+            $case1="";
+        if($c==true){
+            $case1="Hello $a, Your Age Is $b, You Are Available For Hire<br>";
+        }else{
+            $case1="Hello $a, Your Age Is $b, You Are Not For Hire<br>";
+        }
+        return $case1;
+    }
+    if(gettype($a)==="integer"  && gettype($b)==="string" && gettype($c)==="boolean"){
+        $case2="";
+        if($c==true){
+            $case2="Hello $b, Your Age Is $a, You Are Available For Hire<br>";
+        }else{
+            $case2="Hello $b, Your Age Is $a, You Are Not For Hire<br>";
+        }
+        return $case2;
+    }
+    if(gettype($a)==="boolean"  && gettype($b)==="integer" && gettype($c)==="string"){
+        $case3="";
+        if($a==true){
+            $case3="Hello $c, Your Age Is $b, You Are Available For Hire<br>";
+        }else{
+            $case3="Hello $c, Your Age Is $b, You Are Not For Hire<br>";
+        }
+        return $case3;
+    }
+    if(gettype($a)==="boolean"  && gettype($b)==="string" && gettype($c)==="integer"){
+        $case4="";
+        if($a==true){
+            $case4="Hello $b, Your Age Is $c, You Are Available For Hire<br>";
+        }else{
+            $case4="Hello $b, Your Age Is $c, You Are Not For Hire<br>";
+        }
+        return $case4;
+    }
+}
+  // Needed Output
+  echo check_status("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+  echo check_status(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+  echo check_status(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+  echo check_status(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+
+
+Assignment 6
+============
+<?php
+function calculate($one,$two,$type=""){
+    switch($type){
+        case"a":
+            return $one+$two."<br>";
+        case"s":
+        case"subtract":
+            return $one-$two."<br>";
+        case"m":
+        case"multiply":
+            return $one * $two."<br>";
+        default:
+        return $one+$two."<br>";
+    }
+}
+
+// Needed Output
+echo calculate(10, 20); // 30
+echo calculate(10, 20, "a"); // 30
+echo calculate(10, 20, "s"); // -10
+echo calculate(10, 20, "subtract"); // -10
+echo calculate(10, 20, "multiply"); // 200
+echo calculate(10, 20, "m"); // 200
+
+Assignment 7
+============
+<?php
+// function calculate(int $num_one, int $num_two) :float {
+//     return $num_one + $num_two;
+// }
+function calculate(int $num_one, int $num_two) {
+    $num_one=(float)$num_one;
+    return $num_one + $num_two;
+}
+  echo calculate(20, 10); // 30
+  echo gettype(calculate(20, 10)); // Double
+
+Assignment 8
+============
+<?php
+$message = "Hello";
+
+$$message = function($name) use ($message){
+    return "$message $name";
+};
+
+echo $Hello("Osama"); // Hello Osama
+
+Assignment 9
+============
+<?php
+$greet = function ($msg){
+    return $msg;
+};
+$greet=fn($msg)=>"$msg";
+
+// Needed Output
+echo $greet("Greetings"); // Greetings

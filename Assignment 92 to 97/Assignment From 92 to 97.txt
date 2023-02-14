@@ -1,0 +1,44 @@
+Week 11
+=======
+Assignment 1
+============
+<?php
+date_default_timezone_set("Asia/Riyadh");
+echo date_default_timezone_get();
+echo '<br>';
+echo date("D, d M y - h:i:s A");
+echo '<br>';
+echo date("l, d F Y - h:i:s A");
+
+Assignment 2
+============
+<?php
+$date = date_create("2005-10-02");
+date_default_timezone_set("Africa/Cairo");
+echo date_default_timezone_get()."<br>";
+date_add($date,date_interval_create_from_date_string("15 hours 15 minutes 15 seconde"));
+echo date_format($date,"Y, F, l 'dS' G:i:s");
+
+Assignment 3
+============
+<?php
+$date ="1990-10-01";
+$epoch=time();
+date_default_timezone_set("Africa/Cairo");
+$diff = (strtotime($date) - strtotime($epoch));
+$days=$diff /60 /60 /24 ."<br>";
+$years=$diff /60 /60 /24 /365 ."<br>";
+echo "From Epoch Time Till 1990-10-01 Is Approximately $days Days <br>";
+echo "From Epoch Time Till 1990-10-01 Is Approximately $years Years";
+
+Assignment 4
+============
+<?php
+$date =date_create("1990-10-01");
+$epoch=date_create("1970-01-01");
+date_default_timezone_set("Africa/Cairo");
+$diff = date_diff($date,$epoch);
+$days=$diff->days ."<br>";
+$years=$diff->y;
+echo "From Epoch Time Till 1990-10-01 Is Approximately $days Days <br>";
+echo "From Epoch Time Till 1990-10-01 Is Approximately $years Years <br>";

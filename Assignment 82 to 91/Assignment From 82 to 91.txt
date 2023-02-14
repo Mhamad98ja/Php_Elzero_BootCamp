@@ -1,0 +1,87 @@
+Week 10
+=======
+Assignment 1
+============
+<?php
+echo number_format(round(disk_total_space("C:"))/1024/1024/1024/1024 , 2);
+echo "<br>";
+echo number_format(round(disk_total_space("D:"))/1024/1024/1024/1024 , 2);
+
+Assignment 2
+============
+<?php
+$fileSize= filesize("C:/Users/10User/Pictures/programming-wallpaper.jpg");
+echo "Size In Megabyte Is ". number_format($fileSize/1024/1024 , 2);
+echo "<br>";
+echo "Size In Kilobyte Is ". number_format($fileSize/1024 , 2);
+
+Assignment 3
+============
+<?php
+mkdir("Programming/PHP",0711,TRUE);
+if(file_exists("Programming/PHP")){
+    rmdir("Programming/PHP");
+    echo "Directory Programming/PHP Removed <br>";
+}if(file_exists("Programming")){
+    echo rmdir("Programming");
+    echo "Directory Programming Removed <br>";
+}
+
+Assignment 4
+============
+<?php
+    function change_permission($file_name){
+        if(is_file($file_name)){
+        if(pathinfo($file_name)["extension"] === "txt"){
+            chmod($file_name,0700);
+            echo "Permissions Changed";
+        }else{
+            echo "File Extension Is Not Txt";
+        }
+        }else{
+        echo " This Is Directory And Only Files Allowed";
+        }
+        }
+    echo change_permission("Elzero")."<br>";
+    echo change_permission("Work.docx")."<br>";
+    echo change_permission("Result.txt")."<br>";
+
+Assignment 5
+============
+<?php
+    echo basename("Assignment5.php")."<br>";
+    echo basename(__FILE__)."<br>";
+    echo pathinfo(__FILE__)["basename"]."<br>";
+    echo pathinfo(__FILE__,PATHINFO_BASENAME)."<br>";
+
+Assignment 6
+============
+<?php
+// echo mb_strlen("Hello Elzero Web\r\nSchool");
+$handle= fopen("elzero.txt","r");
+echo fread($handle,24);
+echo "<br>";
+rewind($handle);
+echo fgets($handle);
+echo fgets($handle);
+echo "<br>";
+echo file_get_contents("elzero.txt",true,null,0,24);
+echo "<br>";
+rewind($handle);
+for($i=0;$i<25;$i++){
+    echo fgetc($handle);
+}
+//Don't forget to create your file.txt
+
+Assignment 7
+============
+<?php
+$old = "Osamaa";
+$new = "Elzero";
+$str = implode("", file('elzero.txt'));
+$handle = fopen("elzero.txt","w");
+$str=str_replace($old ,$new ,$str);
+
+fwrite($handle, $str, strlen($str));
+fclose($handle);
+//Don't forget to create your file.txt

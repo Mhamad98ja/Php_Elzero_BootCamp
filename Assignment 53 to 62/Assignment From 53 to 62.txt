@@ -1,0 +1,70 @@
+Week 7
+======
+Assignment 1
+============
+<?php
+$num_one = -1;
+$num_two = 2.5;
+$num_two=(int)$num_two;
+
+$let_one = "o";
+$let_two = "z";
+
+$str = "El%er0";
+
+$str[$num_two]=$let_two;
+$str[$num_one]=$let_one;
+
+echo $str; 
+
+Assignment 2
+============
+<?php
+$str = "Orezle";
+echo ucfirst(strrev(lcfirst($str)));
+
+Assignment 3
+============
+<?php
+$str = 'aAa';
+$num = 3;
+$char = "_";
+
+echo chunk_split(str_repeat(strtolower($str),$num),$num,$char);
+
+Assignment 4
+============
+<?php
+$str = "<div><b>Elzero</b></div>";
+echo strip_tags($str,"<b>");
+
+Assignment 5
+============
+<?php
+$str = "Elzero Web School";
+$e = "e";
+$o = "O";
+$four = 4;
+echo substr_count($str,$e)."<br>";
+$four=$four/$four;
+echo substr_count(strtoupper(strrev($str)[$four]),$o);
+
+Assignment 6
+============
+<?php
+$chars = ["E", "l", "z", "e", "r", "o"];
+echo implode($chars);
+
+Assignment 7
+============
+<?php
+$chars = ["E", 1, 2, "l", "z", "E", "R", "o"];
+for($i=0;$i<count($chars);$i++){
+        if(gettype($chars[$i])=="integer"){
+            continue;
+        }elseif($i==0){
+            echo ucfirst($chars[$i]);
+        }else{
+            echo strtolower($chars[$i]);
+        }
+}

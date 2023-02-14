@@ -1,0 +1,132 @@
+Week 5
+======
+Assignment 1
+============
+<?php 
+$index=10;
+for($index;$index>0;$index--){
+    echo $index . "<br>";
+}
+
+Assignment 2
+============
+<?php
+// $index=0;
+// for($index;$index<=20;$index++){
+//     if($index%2==0){
+//         if($index==0){
+//             continue;
+//         }
+//         echo $index . "<br>";
+//     }
+// }
+// while($index <=20){
+//         if($index %2==0  && $index !=0){
+//         echo $index . "<br>";
+//     }
+//     $index++;
+// }
+
+// do{
+//     if($index %2==0 && $index !=0){
+//         echo $index . "<br>";
+//     }
+//     $index++;
+// }while($index <=20);
+
+Assignment 3
+============
+<?php
+$num = 2;
+while ($num < 520) {
+    $num=$num-1;
+    echo $num ."<br>";
+    $num=$num*2+2;
+    $num=$num+1;
+}
+
+Assignment 4
+============
+<?php
+$start = 10;
+$end = 0;
+$stop = 3;
+
+for($start;$start>=$stop;$start--){
+    if($start==10){
+        echo $start.'<br>';
+    }else{
+        echo "$end" . "$start"."<br>";
+    }
+    
+}
+
+Assignment 5
+============
+<?php
+$start = 0;
+$mix = [1, 2, 3, "A", "B", "C", 4];
+for($start;$start<count($mix);$start++){
+    if($start==0 || $start==3 || $start==4 || $start==5){
+        continue;
+    }else{
+        echo $mix[$start] . "<br>";
+    }
+}
+
+Assignment 6
+============
+<?php
+$money = ["Ahmed" => 100, "Sayed" => 150, "Osama" => 100, "Maher" => 250];
+
+foreach($money as $name => $pound){
+    echo "The Name Is $name And I Need $pound Pound From Him"."<br>";
+}
+
+Assignment 7
+============
+<?php
+$mix = [1, 2, "A", "B", "C", 3, 4];
+$nb=0;
+$st=0;
+foreach($mix as $el){
+    if(gettype($el)==="integer"){
+        echo $el . "<br>";
+        $nb=$nb+1;
+    }elseif(gettype($el)==="string"){
+        $st=$st+1;
+    }
+}
+echo"$nb Numbers Printed";
+echo "<br>";
+echo "$st Letters Ignored";
+
+Assignment 8
+============
+<?php
+$nums = [1, 13, 12, 20, 51, 17, 30];
+foreach($nums as $odd){
+    if($odd %2==0){
+        echo $odd/2 ."<br>";
+    }
+}
+
+Assignment 9
+============
+<?php
+$help_num = 3;
+$nums = [4, 5, 6, 1, 2, 3];
+$names = ["Ahmed", "Sayed", "Osama", "Mahmoud", "Gamal"];
+for($i=$nums[$help_num];$i<$help_num;$i++){
+    echo $names[$i] . "<br>";
+}
+
+Assignment 10
+=============
+<?php
+$help_num = 4;
+$nums = [2, 4, 5, 6, 10];
+foreach($nums as $nb){
+    echo "$nb"." + "."$nums[$help_num]"." =".$nb+$nums[$help_num]."<br>";
+    $help_num=$help_num-1;
+}
